@@ -13,12 +13,14 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.drew.colors.colors.*;
 
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
 
 @Mod(modid = Colors.MODID, version = Colors.VERSION)
 public class Colors {
@@ -38,8 +40,15 @@ public class Colors {
 		color255000000 = new redBlock();
 		color000000255 = new blueBlock();
 
-		
 	}
+	
+	public static CreativeTabs colors = new CreativeTabs("colors") {
+	    @Override
+		   @SideOnly(Side.CLIENT)
+		   public Item getTabIconItem() {
+	        return Item.getItemFromBlock(color000255000);
+		    }
+		};
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		if(event.getSide() == Side.CLIENT)

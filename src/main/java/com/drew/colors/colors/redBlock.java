@@ -17,7 +17,7 @@ public class redBlock extends Block {
 		super(Material.cloth);	
 		GameRegistry.registerBlock(this, name);
 		setUnlocalizedName(Colors.MODID + "_" + name);
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(Colors.colors);
 	}
 
 	public String getName() {

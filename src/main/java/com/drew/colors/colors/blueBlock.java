@@ -10,14 +10,14 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class blueBlock extends Block {
 	
-	private final String name = "color255000000";
+	private final String name = "color000000255";
 	
 	public blueBlock()
 	{
 		super(Material.cloth);	
 		GameRegistry.registerBlock(this, name);
 		setUnlocalizedName(Colors.MODID + "_" + name);
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(Colors.colors);
 	}
 
 	public String getName() {
